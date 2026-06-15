@@ -540,13 +540,13 @@
 
       <div class="examples">
 
-        <div class="ex"><div class="ratio"><iframe src="https://drive.google.com/file/d/1LhCOZ5iY-al1aigfQfPyPPpPy3UIpZ4Y/preview" allow="autoplay" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe><div class="cap"><div class="genre">Epic Fantasy · 9:16</div><div class="title">Cern 288</div></div></div></div>
+        <div class="ex"><div class="ratio"><a href="https://drive.google.com/file/d/1LhCOZ5iY-al1aigfQfPyPPpPy3UIpZ4Y/view" target="_blank" rel="noopener" style="position:absolute;inset:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:radial-gradient(120% 100% at 50% 0%,#211c3a 0%,#000 65%);text-decoration:none;"><div style="width:64px;height:64px;border-radius:50%;background:rgba(138,92,240,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(138,92,240,0.6);"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></a><div class="cap"><div class="genre">Epic Fantasy · 9:16</div><div class="title">Cern 288</div></div></div></div>
 
-        <div class="ex"><div class="ratio"><iframe src="https://drive.google.com/file/d/1RarXHsIMxfKP9xgcoJi-v7maUphDBRf9/preview" allow="autoplay" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe><div class="cap"><div class="genre">Romance · 9:16</div><div class="title">DNA Rouge</div></div></div></div>
+        <div class="ex"><div class="ratio"><a href="https://drive.google.com/file/d/1RarXHsIMxfKP9xgcoJi-v7maUphDBRf9/view" target="_blank" rel="noopener" style="position:absolute;inset:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:radial-gradient(120% 100% at 50% 0%,#211c3a 0%,#000 65%);text-decoration:none;"><div style="width:64px;height:64px;border-radius:50%;background:rgba(138,92,240,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(138,92,240,0.6);"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></a><div class="cap"><div class="genre">Romance · 9:16</div><div class="title">DNA Rouge</div></div></div></div>
 
-        <div class="ex"><div class="ratio"><iframe src="https://drive.google.com/file/d/1fdMk8HDaPjkYo5ozlZP1OSF4zx8X8VaW/preview" allow="autoplay" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe><div class="cap"><div class="genre">Children's · 9:16</div><div class="title">Los Demonois</div></div></div></div>
+        <div class="ex"><div class="ratio"><a href="https://drive.google.com/file/d/1fdMk8HDaPjkYo5ozlZP1OSF4zx8X8VaW/view" target="_blank" rel="noopener" style="position:absolute;inset:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:radial-gradient(120% 100% at 50% 0%,#211c3a 0%,#000 65%);text-decoration:none;"><div style="width:64px;height:64px;border-radius:50%;background:rgba(138,92,240,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(138,92,240,0.6);"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></a><div class="cap"><div class="genre">Children's · 9:16</div><div class="title">Los Demonois</div></div></div></div>
 
-        <div class="ex land wide"><div class="ratio"><iframe id="featured-trailer" src="" allow="autoplay" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe><div class="cap"><div class="genre">Featured Trailer · 16:9</div><div class="title" id="featured-title">Loading…</div></div></div></div>
+        <div class="ex land wide"><div class="ratio"><a id="featured-link" href="#" target="_blank" rel="noopener" style="position:absolute;inset:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:radial-gradient(120% 100% at 50% 0%,#211c3a 0%,#000 65%);text-decoration:none;"><div style="width:72px;height:72px;border-radius:50%;background:rgba(138,92,240,0.9);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 40px rgba(138,92,240,0.6);"><svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></a><div class="cap"><div class="genre">Featured Trailer · 16:9</div><div class="title" id="featured-title">Loading…</div></div></div></div>
 
       </div>
 
@@ -783,9 +783,10 @@
     { id: '1fdMk8HDaPjkYo5ozlZP1OSF4zx8X8VaW', title: 'Los Demonois' }
   ];
   var pick = videos[Math.floor(Math.random() * videos.length)];
-  var iframe = document.getElementById('featured-trailer');
+  // featured video link set below
   var titleEl = document.getElementById('featured-title');
-  if(iframe) iframe.src = 'https://drive.google.com/file/d/' + pick.id + '/preview';
+  var link = document.getElementById('featured-link');
+  if(link) link.href = 'https://drive.google.com/file/d/' + pick.id + '/view';
   if(titleEl) titleEl.textContent = pick.title;
 })();
 
