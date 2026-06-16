@@ -438,6 +438,39 @@
       el.setAttribute('tabindex','0');
       el.addEventListener('keydown', function(e){ if(e.key==='Enter'){ el.click(); }});
     });
+// Screening Room: enlarge & swap trailers into the big slot
+(function(){
+  var examples = document.querySelector('.examples');
+  if(!examples) return;
+  var css = '.ex .enlarge-btn{position:absolute;top:10px;right:10px;z-index:5;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:rgba(11,10,18,.66);border:1px solid var(--rule-dark);color:var(--cream,#F3ECDD);cursor:pointer;backdrop-filter:blur(6px);transition:background .15s ease,transform .15s ease,border-color .15s ease;padding:0;}'
+    + '.ex .enlarge-btn:hover{background:var(--plum,#8A5CF0);border-color:var(--plum,#8A5CF0);transform:scale(1.06);}'
+    + '.ex .enlarge-btn svg{width:17px;height:17px;display:block;}'
+    + '.ex.wide .enlarge-btn{display:none;}';
+  var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
+  var ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"></path></svg>';
+  examples.querySelectorAll('.ex').forEach(function(card){
+    var ratio = card.querySelector('.ratio');
+    if(ratio && !ratio.querySelector('.enlarge-btn')){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'enlarge-btn';
+      b.setAttribute('aria-label','Enlarge this trailer');
+      b.innerHTML = ICON;
+      ratio.appendChild(b);
+    }
+  });
+  examples.addEventListener('click', function(e){
+    var btn = e.target.closest('.enlarge-btn');
+    if(!btn) return;
+    var card = btn.closest('.ex');
+    if(!card || card.classList.contains('wide')) return;
+    var current = examples.querySelector('.ex.wide');
+    if(current) current.classList.remove('wide');
+    card.classList.add('wide');
+    examples.insertBefore(card, examples.firstElementChild);
+  });
+})();
+
   </script>
 </body>
 </html>
